@@ -4,3 +4,16 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+# local deps
+account_types = { path = "account_types" }
+clap = { version = "4.5.26", features = ["derive"] }
+serde = { version = "1.0.217", features = ["derive"] }
+serde_toml = "0.0.1"
+
+# external deps
+sqlx = { version = "0.8.3", features = ["derive", "postgres", "runtime-tokio", "sqlite"] }
+tempfile = "3.15.0"
+thiserror = "2.0.11"
+tokio = { version = "1.43.0", features = ["full"] }
+toml = "0.8.19"
+

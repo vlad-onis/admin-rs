@@ -1,0 +1,4 @@
+[database]
+# todo: this is a secret it can't be kept in config
+connection_url = "postgres://postgres:postgres@localhost:5432/admin_db"
+max_connections = 5
