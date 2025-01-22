@@ -9,6 +9,7 @@ account_types = { path = "account_types" }
 clap = { version = "4.5.26", features = ["derive"] }
 serde = { version = "1.0.217", features = ["derive"] }
 serde_toml = "0.0.1"
+test_setup_macro = { path = "../test_setup_macro" }
 
 # external deps
 sqlx = { version = "0.8.3", features = ["derive", "postgres", "runtime-tokio", "sqlite"] }

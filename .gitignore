@@ -1,3 +1,4 @@
 account_service/target/*
 account_service/account_types/target/*
 account_service/docker/data/*
+test_setup_macro/target/*

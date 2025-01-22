@@ -47,20 +47,14 @@ pub mod tests {
 
     use crate::storage::{config::DatabaseConfig, Storage};
 
-    fn setup_db() -> NamedTempFile {
-        Builder::new()
-            .suffix(".db")
-            .prefix("test")
-            .tempfile_in("dbtests")
-            .unwrap()
-    }
+    // taggin a function with this macro will make a file path available called temp_db
+    // in your scope, and you can use that file path as an sqlite instance only for that test
+    use test_setup_macro::with_temp_db;
 
-    #[tokio::test]
-    async fn test_db() {
-        let db_file = setup_db();
-
+    #[with_temp_db]
+    async fn connection() {
         let config = DatabaseConfig {
-            connection_url: db_file.path().to_string_lossy().to_string(),
+            connection_url: temp_db.path().to_string_lossy().to_string(),
             max_connections: 5,
         };
 
